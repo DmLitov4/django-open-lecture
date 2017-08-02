@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load staticfiles %}
+
+<script>
+    $(document).ready(function(){
+        $(".poetryblock").hide()
+        $(".poetryblock").fadeIn(2500);
+    });
+</script>
+
+<div class="poetryblock" style="display:block;text-align:center">
+    {% for poetry in poetry_list %}
+        <h3> {{ poetry.author_name }} </h3>
+        <h6> {{ poetry.title }} </h6>
+    </br>   
+        <p> {{ poetry.poetry_text | linebreaks }} </p>
+        <hr class="cleanit">
+        <div class="cara"></div>
+    {% endfor %}
+</div>
+
+{% endblock %}

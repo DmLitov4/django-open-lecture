@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load staticfiles %}
+
+<script>
+    $(document).ready(function(){
+        $(".mainblock").hide()
+        $(".mainblock").fadeIn(2500);
+    });
+</script>
+
+    <!-- *********  Main part (slider)  ********** -->
+    
+        
+        <div class="mainblock" id="main_part">
+            <div id="main_part_in">
+        
+            <h2>Классика и современные авторы</h2>
+            
+            <p>Читайте, сохраняйте и делитесь работами! Вдохновляйтесь строчками на нашем сервисе!</p>
+            
+            </div>
+            
+            
+            <div class="button_main">
+                <div class="pxline"></div>
+                <a href="/blog" class="button_dark">Перейти</a>
+            </div>
+            
+        </div>
+        
+        
+        <!-- *********  Content  ********** -->
+        
+        <div id="content">
+            
+            <div class="thirds">
+                <h3>Закладки</h3>
+                <p>Откладывайте понравившиеся стихотворения для прочтения позже</p>
+            </div>
+            
+            <div class="thirds">
+                <h3>Поиск</h3>
+                <p>Быстрый поиск по всей базе работ</p>
+            </div>
+            
+            <div class="thirds">
+                <h3>Личный кабинет</h3>
+                <p>Регистрируйтесь и делитесь собственным творчеством!</p>
+            </div>
+            
+            <hr class="cleanit">
+            
+            <div class="banner1">
+                <p>А ещё заходите на оф. сайт мехмата ЮФУ!<p>
+                <a href="http://mmcs.sfedu.ru" class="button_dark">Перейти</a>
+            </div>         
+                
+                
+            <!-- ****  Recent works  ***** -->        
+            
+            <h3>Недавно добавленные работы: </h3>
+            
+            {% for poetry in recent_list%}
+                <div class="fourths_portfolio">
+                    <h4>{{ poetry.author_name }}<br>
+                        <span> {{ poetry.title }}</span>
+                    </h4>
+                </div>
+            {% endfor %}
+            
+            <hr class="cleanit">
+            
+            <div class="cara"></div>
+            
+            
+            <!-- ****  About & Foobar ***** --> 
+            
+            
+            <div class="about_blok">
+                <h3>О проекте</h3>
+                <p class="about">Данная заготовка создана для презентации возможностей фреймворка Django, предназначенного для быстрого создания крутых веб-приложений. Скоро Вы станете продвинутым веб-разработчиком! ;)</p>
+                
+            </div>
+            
+            <div class="testimonials">
+                <div class="quote">Спасибо за то, что пришли на мероприятие! Автор лекции желает Вам успехов и экзаменов без пересдач!</div>
+                
+                <span class="testimonials_bottom"></span>
+                
+                <ul class="controls">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+                <span class="by">Автор лекции</span>
+            </div>
+            
+        </div>
+{% endblock %}

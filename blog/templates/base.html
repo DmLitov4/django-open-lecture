@@ -1,0 +1,63 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Poetry Town - мир стихотворений в Вашем браузере</title>
+    
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/styl.css' %}" type="text/css">
+        
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    
+    <!-- *********  Header  ********** -->
+    
+    <div id="header">
+        <div id="header_in">
+        
+        <h1><a href="/"><b>Poetry Town</b></a></h1>
+        
+        <div id="menu">
+         <ul>
+            <li><a href="/">О сервисе</a></li>
+            <li><a href="/blog">Стихотворения</a></li>
+            <li><a href="/add">Добавить</a></li>            
+         </ul>
+        </div>
+        
+        </div>
+    </div>
+
+    {% block content %} {% endblock %}
+
+   
+    <!-- *********  Footer  ********** -->
+    
+    <hr class="cleanit">
+    
+     <div id="footer">
+        <div id="footer_in">
+            
+            <p><a href="http://mmcs.sfedu.ru">MMCS SFEDU</a> &mdash; 2017 (с)</p>
+            <span>Автор: Дмитрий Литовченко</span>
+     
+        </div>
+    </div>
+         
+<script>
+// script for testimonial' tabs
+$(function() {
+    $("ul.controls").tabs("div.testimonials > div");
+});
+</script>
+
+</body>
+</html>
